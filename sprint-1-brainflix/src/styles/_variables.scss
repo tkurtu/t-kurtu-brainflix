@@ -1,0 +1,31 @@
+/*VARIABLES*/
+$regularfont: AvenirRegular;
+$boldfont: AvenirBold;
+$demifont: AvenirDemi;
+$thinfont: AvenirThin;
+$para-fontsize: 13px;
+$para-lineheight: 18px;
+$light-grey: #AFAFAF;
+$mobile-title: 14px;
+$mobile-lineheight: 22px;
+$default-color: #323232;
+
+
+
+/*FONTS*/
+@font-face {
+  font-family: "AvenirRegular";
+  src: url(./fonts/regular.otf) format('oft');
+}
+@font-face {
+  font-family: "AvenirBold";
+  src: url(./fonts/bold.otf) format('oft');
+}
+@font-face {
+  font-family: "AvenirDemi";
+  src: url(./fonts/demibold.otf) format('oft');
+}
+@font-face {
+  font-family: "AvenirThin";
+  src: url(./fonts/thinfont.otf) format('oft');
+}
