@@ -1,0 +1,141 @@
+/*TABLET QUERIES */
+
+// HEADER & SEARCH BAR
+@media (min-width: 575px) {
+  header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+      .logo {
+        margin-right: auto;
+        align-self: center;
+        padding-bottom: 0;
+      }
+  }
+
+  .search-box {
+    width: 30%;
+  }
+
+  .uploadWrapper {
+    button {
+      margin: 0 24px;
+    }
+  }
+
+}
+
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 36px;
+    line-height: 44px;
+    margin: 0;
+    padding: 24px 0;
+  }
+
+  .tablet-flex {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    border-bottom: 1px solid  #E1E1E1;
+    padding-bottom: 24px;
+  }
+
+  .views-likes {
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .description {
+    width: 500px;
+  }
+
+  /*FORM*/
+  .form-flex {
+    display: flex;
+    align-items: center;
+  }
+
+  .tablet-form {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    height: 40px;
+  }
+
+  .comments {
+    &__form {
+      width: 440px;
+      margin: 0;
+      padding: 0 0 0 10px;
+      height: 40px;
+      margin-right: 16px;
+    }
+
+    &__button {
+      width: 160px;
+      margin: 0;
+      height: 40px;
+    }
+  }
+  
+  .span-width {
+    width: 624px;
+  }
+}
+
+/*DESKTOP QUERIES*/
+@media (min-width: 1440px) {
+
+  body {
+    padding: 20px 0;
+  }
+
+  header, .desktop-flex {
+    padding: 0 180px;
+  }
+
+  .container-1, .container-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .container-2 {
+    padding-top: 20px
+  }
+
+  /*PLAYING VIDEO AND DESCRIPTION*/
+  .tablet-flex {
+   border-bottom: 0;
+  }
+
+  .desktop-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .video-container {
+    text-align: center;
+    margin: auto;
+    background-color: black;
+    
+  }
+  .currentvideo {
+    width: 944px;
+  }
+
+
+  .single-comment {
+    width: 712px;
+  }
+}
+
+
