@@ -8,13 +8,14 @@ class Currentvideo extends React.Component {
       <div className="video-container" >
         <video controls className="currentvideo" poster={nowplaying}  >
         </video>
-
       </div>
-      
-
+    
       </section>
     )
   }
 }
 
 export default Currentvideo
+
+
+//add a state HEREEE

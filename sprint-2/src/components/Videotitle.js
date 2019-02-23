@@ -7,6 +7,7 @@ class Videotitle extends React.Component {
   render() {
     return (
       <section>
+        
         <h1>BMX Rampage: 2018 Highlights</h1>
         <article className="tablet-flex">
           <div className="author">
