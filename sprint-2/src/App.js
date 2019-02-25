@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles/index.css';
-import Homepage from './components/Homepage';
-import Upload from './Upload';
+import Homepage from './Homepage';
+import Upload from './components/Upload';
 import Header from './components/Header'
 // import axios from 'axios';
 
@@ -17,12 +17,12 @@ class App extends Component {
       <Switch>
        <Route path="/" exact render={
          () => <Homepage 
-                  // videos={this.props.videos} 
-                  comments={this.props.comments} 
-                />
+            // videos={this.props.videos} 
+            // comments={this.props.comments} 
+          />
        } />
        <Route path="/upload" component={Upload} />
-       <Route path=":/id" component = {Homepage} />
+       <Route path="/videos/:id" component = {Homepage} />
       </Switch>
         
       
@@ -37,3 +37,5 @@ export default App;
 
 
   // const { videos, comments } = this.props
+
+  // /videos/:id"

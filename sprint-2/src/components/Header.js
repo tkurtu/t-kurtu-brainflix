@@ -15,9 +15,9 @@ class Header extends React.Component {
         </div>
         <input type="text" name="searchbox" placeholder="Search" className="search-box" />
           <div className="uploadWrapper">
-          <button>
-          <Link to="/upload">+UPLOAD</Link> 
-          </button>
+          <Link to="/upload">
+            <button>+UPLOAD</button>
+          </Link> 
             <img className="rounded-image" src={user} alt="a person"></img>
           </div>
   

@@ -10,6 +10,15 @@ body {
   color: $default-color;
 }
 
+a:active, a:visited, a:link {
+  text-decoration: none;
+  color: $default-color;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: black;
+}
 
 /*HEADER COMPONENT*/
 .logo {
@@ -28,6 +37,7 @@ body {
   background-repeat: no-repeat;
   background-position: 3%;
   padding-left:50px;  
+  height: 36px;
 }
 
 .rounded-image {
@@ -43,7 +53,7 @@ body {
 
   button {
    @include bluebutton;
-    width: 75%;
+   width: 224px;
   }
 
 
@@ -109,6 +119,11 @@ body {
     margin-right: 10px;
   }
 
+  &__cancel {
+    color: #1a97fc;
+    text-align: center;
+  }
+
   .form-width{
     width: 100%;
   }
@@ -124,15 +139,14 @@ body {
     display: flex;
   }
 
-
-
   &__form {
     width: 100%;
     border: 2px solid #1a97fc;
     border-radius: 4px;
     box-sizing: border-box;
-    padding: 10px 0 50px 5px;
+    padding: 10px 0 100px 5px;
     margin-top: 10px;
+    background-color: #FAFAFA;
   }
 
 
@@ -147,14 +161,39 @@ body {
 }
 
 /*UPLOAD PAGE*/
-.comments__upload {
+
+
+.upload-form {
+  padding-top: 32px;
+}
+
+.upload-form1 {
   @extend .comments__form;
   padding: 10px 5px;
+  border: 2px solid #AFAFAF;
+  margin-bottom: 24px;
+}
+
+.upload-form2 {
+  @extend .comments__form;
+  border: 2px solid #AFAFAF;
+  margin-top: 0;
 }
 
 
-/*SINGLE COMMENTS*/
+.upload-image {
+  @extend .currentvideo
+}
 
+.upload-subtitle {
+  @extend .comments__title;
+  padding: 5px 0;
+}
+
+
+
+
+/*SINGLE COMMENTS*/
 .single-comment {
   border-top: 1px solid #E1E1E1;
 }

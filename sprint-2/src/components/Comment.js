@@ -5,7 +5,7 @@ class Comment extends React.Component {
     return (
       <section className="single-comment">
        <article className="comment-flex">
-         <img className="rounded-image" src={this.props.userImg} alt=" "></img>
+    <img className="rounded-image" src={this.props.userImg} alt=" "></img> 
          <div className="comment-box">
           <div className="name-flex">
             <h5 className="user-name">{this.props.name}</h5>  
@@ -19,5 +19,7 @@ class Comment extends React.Component {
 }
 
 export default Comment
+
+
 
 

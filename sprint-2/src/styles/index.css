@@ -31,6 +31,16 @@ body {
   color: #323232;
 }
 
+a:active, a:visited, a:link {
+  text-decoration: none;
+  color: #323232;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
 /*HEADER COMPONENT*/
 .logo {
   text-align: center;
@@ -49,6 +59,7 @@ body {
   background-repeat: no-repeat;
   background-position: 3%;
   padding-left: 50px;
+  height: 36px;
 }
 
 .rounded-image {
@@ -76,11 +87,12 @@ button {
   border-radius: 4px;
   border: 1px solid #1a97fc;
   height: 40px;
-  width: 75%;
+  font-size: 1rem;
+  width: 224px;
 }
 
 /*VIDEO COMPONENT*/
-.currentvideo {
+.currentvideo, .upload-image {
   width: 100%;
 }
 
@@ -141,11 +153,16 @@ button {
   margin-right: 10px;
 }
 
+.comments__cancel {
+  color: #1a97fc;
+  text-align: center;
+}
+
 .comments .form-width {
   width: 100%;
 }
 
-.comments__title {
+.comments__title, .upload-subtitle {
   color: #AFAFAF;
   font-size: 13px;
   line-height: 18px;
@@ -158,14 +175,15 @@ button {
   display: flex;
 }
 
-.comments__form, .comments__upload {
+.comments__form, .upload-form1, .upload-form2 {
   width: 100%;
   border: 2px solid #1a97fc;
   border-radius: 4px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 10px 0 50px 5px;
+  padding: 10px 0 100px 5px;
   margin-top: 10px;
+  background-color: #FAFAFA;
 }
 
 .comments__button {
@@ -176,11 +194,27 @@ button {
   border-radius: 4px;
   border: 1px solid #1a97fc;
   height: 40px;
+  font-size: 1rem;
 }
 
 /*UPLOAD PAGE*/
-.comments__upload {
+.upload-form {
+  padding-top: 32px;
+}
+
+.upload-form1 {
   padding: 10px 5px;
+  border: 2px solid #AFAFAF;
+  margin-bottom: 24px;
+}
+
+.upload-form2 {
+  border: 2px solid #AFAFAF;
+  margin-top: 0;
+}
+
+.upload-subtitle {
+  padding: 5px 0;
 }
 
 /*SINGLE COMMENTS*/
@@ -297,10 +331,11 @@ button {
     padding-bottom: 0;
   }
   .search-box {
-    width: 30%;
+    width: 252px;
   }
   .uploadWrapper button {
     margin: 0 24px;
+    width: 103px;
   }
 }
 
@@ -349,7 +384,7 @@ button {
     margin-right: 40px;
     height: 40px;
   }
-  .comments__form, .comments__upload {
+  .comments__form, .upload-form1, .upload-form2 {
     width: 440px;
     margin: 0;
     padding: 0 0 0 10px;
@@ -361,8 +396,46 @@ button {
     margin: 0;
     height: 40px;
   }
+  .comments__cancel {
+    padding-right: 48px;
+  }
   .span-width {
     width: 624px;
+  }
+  /********UPLOAD*********/
+  .grey-border {
+    border-top: 1px solid  #E1E1E1;
+    border-bottom: 1px solid  #E1E1E1;
+    margin-bottom: 40px;
+  }
+  .upload-title {
+    padding: 48px 0 32px 0;
+  }
+  .upload-image {
+    width: 344px;
+    height: 183px;
+  }
+  .upload-form1 {
+    margin-bottom: 40px;
+  }
+  .upload-form1, .upload-form2 {
+    width: 100%;
+  }
+  .upload-form2 {
+    padding: 10px 0 100px 5px;
+    margin-bottom: 40px;
+  }
+  .upload-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -410,11 +483,42 @@ button {
     margin: auto;
     background-color: black;
   }
-  .currentvideo {
+  .currentvideo, .upload-image {
     width: 944px;
   }
   .single-comment {
     width: 712px;
+  }
+  /***UPLOAD PAGE */
+  .upload-body {
+    padding: 0 180px;
+  }
+  .upload-image {
+    width: 344px;
+    height: 183px;
+    padding-right: 24px;
+  }
+  .upload-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin: 40px 0;
+  }
+  .upload-form, .upload-subtitle {
+    padding: 0;
+    margin: 0;
+  }
+  .form-width {
+    width: 100%;
+  }
+  .form-width * {
+    margin: 0;
+  }
+  .upload-subtitle {
+    padding-bottom: 10px;
   }
 }
 /*# sourceMappingURL=index.css.map */
