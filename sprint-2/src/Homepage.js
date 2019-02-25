@@ -48,11 +48,12 @@ class Homepage extends React.Component {
       })
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     if(this.props.match.params.id !== prevProps.match.params.id) {
-      axios.get(currentPlaying(this.props.match.params.id))
+      axios
+      .get(currentPlaying(this.props.match.params.id))
         .then(response => {
-          console.log(this.props.match.params.id)
+          // console.log(this.props.match.params.id)
           this.setState({
             videoComments: response.data.comments,
             videoInfo: response.data,
@@ -62,7 +63,6 @@ class Homepage extends React.Component {
     }
 
   }
-
 
   render() {
     return (
@@ -86,97 +86,3 @@ class Homepage extends React.Component {
 
 
   export default Homepage;
-
-
-  
-  
-  
-  
-  // const videoId = (id) = `https://project-2-api.herokuapp.com/videos/${id}?api_key=c38ea111-7d11-400d-a33b-ab86b765b9b6`
-// const { id } = response.data[0].id
-
-
-   // axios
-    // .get(videoUrl + videoData.id) 
-    // .then(response => {
-    //   this.setState ({
-
-    //   })
-    // })
-    // this.setState ({
-    //   response.data[0].id 
-
-
-    // })
-
-     // .then(re)
-       
-        // .then((videoData) => {
-        //   axios
-        //   .get(videoUrl)
-        // })
-        // // videoId = response.data.map(video => video.id)
-
-
-          // this.setState ({
-          //   videoData: response.data 
-
-          // }) 
-          // this.setState ({videoId: response.data[2].id})
-          // videoId = response.data.map(video => video.id)
-        // })
-        // .then (() => {
-        //   axios
-        //   .get(videoUrl + this.state.videoId + myKey)
-        //   .then(response => 
-        //     console.log(response.data))
-        // })
-
-  
-
-
-  //  componentDidUpdate (prevProps, prevState) {
-
- 
-  //  }
-
-
-    
- 
-
-       // console.log(this.state.videoId[0])
-        // .then(response => {
-        //   // nowPlaying(response.data)
-        // })
-
-
-      // console.log(response.data[0].id)
-      // videoId = response.data.map(video => video.id)
-
-      
- 
-
-        // componentDidUpdate () {
-  //   props.match.params.id 
-  // }
-
- 
-  // componentDidMount() {
-  //   axios
-  //     .get(videoUrl + myKey)
-  //     .then(response => {
-  //       this.setState({videoData: response.data })
-  //         const singleId = response.data.map(video => video.id) //array of IDs
-  
-  //       // this.setState({videoId: response.data[2].id})
-  //     })
-
-  //    .then(() => {
-  //     axios
-  //       .get(videoUrl + this.state.singleId + myKey)
-  //       .then(response => {
-  //         console.log(response.data)
-  //         this.setState({mainPlaying:response.data.image})
-  //       })
-  //     })
-  //   }

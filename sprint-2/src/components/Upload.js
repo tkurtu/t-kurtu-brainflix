@@ -27,7 +27,7 @@ class Upload extends React.Component {
       </div> 
       <div className="upload-buttons">
         <button className="comments__button">PUBLISH</button>
-        <div class="comments__cancel">CANCEL</div>
+        <div className="comments__cancel">CANCEL</div>
       </div>
 
     </section>

@@ -15,17 +15,11 @@ class App extends Component {
       <div>
       <Header />
       <Switch>
-       <Route path="/" exact render={
-         () => <Homepage 
-            // videos={this.props.videos} 
-            // comments={this.props.comments} 
-          />
-       } />
-       <Route path="/upload" component={Upload} />
-       <Route path="/videos/:id" component = {Homepage} />
+        <Route path="/" exact component={Homepage} /> 
+        <Route path="/homepage" component={Homepage} />
+        <Route path="/upload" component={Upload} />
+        <Route path="/videos/:id" component = {Homepage} />
       </Switch>
-        
-      
       </div>
     );
   }
@@ -35,7 +29,9 @@ class App extends Component {
 
 export default App;
 
-
-  // const { videos, comments } = this.props
-
-  // /videos/:id"
+//   <Route path="/homepage" exact render={
+//    () => <Homepage 
+//       // videos={this.props.videos} 
+//       // comments={this.props.comments} 
+//     />
+//  } /> 
