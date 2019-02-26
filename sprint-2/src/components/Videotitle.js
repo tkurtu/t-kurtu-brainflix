@@ -2,6 +2,9 @@ import React from 'react';
 import views from '../assets/Icons/SVG/Icon-views.svg'
 import likes from '../assets/Icons/SVG/Icon-likes.svg'
 
+const videoDate = (date) => {
+  return new Date(date).toLocaleDateString()
+}
 
 class Videotitle extends React.Component {
   render() {
@@ -12,7 +15,7 @@ class Videotitle extends React.Component {
         <article className="tablet-flex">
           <div className="author">
             <span className="author__video">By {this.props.videoInfo.channel}</span>
-            <span className="author__date">12/18/2018</span>
+            <span className="author__date">{videoDate(this.props.videoInfo.timestamp)}</span>
           </div> 
 
           <div className="views-likes">

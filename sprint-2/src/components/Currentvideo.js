@@ -6,7 +6,7 @@ class Currentvideo extends React.Component {
     return (
       <section>
       <div className="video-container" >
-        <video controls className="currentvideo" poster={this.props.videoThumbnail}>
+        <video controls className="currentvideo" poster={this.props.videoThumbnail} >
         </video>
       </div>
     

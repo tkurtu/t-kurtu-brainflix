@@ -26,7 +26,6 @@ class Homepage extends React.Component {
     }
   }
  
-  // submit this if you LOST lost
   componentDidMount() {
     axios.get(videoUrl + myKey)
       .then(response => {
@@ -61,8 +60,9 @@ class Homepage extends React.Component {
           })
         })
     }
-
   }
+
+  
 
   render() {
     return (

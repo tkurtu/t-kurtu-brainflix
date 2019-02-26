@@ -1,6 +1,5 @@
 import React from 'react';
 import upload from '../assets/upload-video.jpg'
-// import { Link,  } from 'react-router-dom';
 
 
 
