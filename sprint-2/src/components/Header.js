@@ -20,9 +20,6 @@ class Header extends React.Component {
           </Link> 
             <img className="rounded-image" src={user} alt="a person"></img>
           </div>
-  
-
-      
       </header>
     )
   }

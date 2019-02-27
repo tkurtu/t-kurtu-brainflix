@@ -1,6 +1,6 @@
 import React from 'react';
-import views from '../assets/Icons/SVG/Icon-views.svg'
-import likes from '../assets/Icons/SVG/Icon-likes.svg'
+import views from '../assets/Icons/SVG/Icon-views.svg';
+import likes from '../assets/Icons/SVG/Icon-likes.svg';
 
 const videoDate = (date) => {
   return new Date(date).toLocaleDateString()
@@ -26,7 +26,7 @@ class Videotitle extends React.Component {
 
         <div>
           <p className="description">
-          {this.props.videoInfo.description}
+            {this.props.videoInfo.description}
           </p>
         </div>
       </section>

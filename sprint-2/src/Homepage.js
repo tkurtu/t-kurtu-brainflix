@@ -4,7 +4,6 @@ import Currentvideo from './components/Currentvideo';
 import Videotitle from './components/Videotitle';
 import FormComments from './components/FormComments';
 import Comments from './components/Comments';
-// import Header from './Header';
 import axios from 'axios';
 
 
@@ -19,10 +18,12 @@ class Homepage extends React.Component {
     super()
     this.state = {
       videoData: [], //list of side videos
-      videoInfo: [],//titles, likes, views
+      videoInfo: [],//titles, likes, views, date, etc.
       videoComments: [], //comments 
-      videoThumbnail: [], //video photo 
+      videoThumbnail: [], //currently playing video 
+      loopingVideo: [], //video of rabbit
       videoId: '', //id of videos
+
     }
   }
  
@@ -40,12 +41,14 @@ class Homepage extends React.Component {
             this.setState ({
               videoComments: response.data.comments,
               videoInfo: response.data,
-              videoThumbnail: response.data.image
+              videoThumbnail: response.data.image,
+              loopingVideo: response.data.video + myKey
             })
             console.log(response.data.image)
           })
       })
   }
+
 
   componentDidUpdate(prevProps, prevState) {
     if(this.props.match.params.id !== prevProps.match.params.id) {
@@ -56,18 +59,17 @@ class Homepage extends React.Component {
           this.setState({
             videoComments: response.data.comments,
             videoInfo: response.data,
-            videoThumbnail: response.data.image
+            videoThumbnail: response.data.image,
+            loopingVideo: response.data.video + myKey
           })
         })
     }
   }
 
-  
-
   render() {
     return (
      <div>
-      <Currentvideo videoThumbnail={this.state.videoThumbnail}/>
+      <Currentvideo videoThumbnail={this.state.videoThumbnail} loopingVideo={this.state.loopingVideo} />
       <section className="desktop-flex">
           <div className="container-1">
             <Videotitle videoInfo={this.state.videoInfo}/>
@@ -76,7 +78,7 @@ class Homepage extends React.Component {
           </div>
       
           <div className="container-2">
-            <Videos videoData={this.state.videoData}  />
+            <Videos videoData={this.state.videoData} videoInfo={this.state.videoInfo}   />
           </div>
       </section>
       </div>
