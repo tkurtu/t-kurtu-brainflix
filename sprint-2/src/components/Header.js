@@ -9,27 +9,20 @@ class Header extends React.Component {
     return (
       <header> 
         <div className="logo"> 
-        <Link to="/">
+          <Link to="/">
             <img src={logo} alt="website logo"></img>
-        </Link>
+          </Link>
         </div>
         <input type="text" name="searchbox" placeholder="Search" className="search-box" />
-          <div className="uploadWrapper">
+        <div className="uploadWrapper">
           <Link to="/upload">
             <button>+UPLOAD</button>
           </Link> 
             <img className="rounded-image" src={user} alt="a person"></img>
-          </div>
+        </div>
       </header>
     )
   }
 }
 
 export default Header
-
-//* <div>
-//* <Link to="/upload">Click to Upload!</Link> ||
-//<Link to="/">Brainflix Home</Link>
-//</div> 
-
-//<button>+ UPLOAD</button>

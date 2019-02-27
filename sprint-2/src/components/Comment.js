@@ -11,7 +11,6 @@ class Comment extends React.Component {
             <h5 className="user-name">{this.props.name}</h5>  
           </div>
             <span className="span-width">{this.props.comment}</span>
-            
          </div>
        </article>
       </section>

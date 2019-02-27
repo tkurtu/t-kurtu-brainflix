@@ -17,7 +17,7 @@ class Videos extends React.Component {
    })
      return (
        <div className="column-videos">
-           <h4>NEXT VID</h4>
+           <h4>NEXT VIDEO</h4>
          {videoList}
        </div>
      )

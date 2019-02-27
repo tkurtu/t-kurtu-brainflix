@@ -21,6 +21,12 @@
 }
 
 /*MIXINS*/
+h3 {
+  color: #323232;
+  font-family: AvenirDemi, sans-serif;
+  padding: 30px;
+}
+
 body {
   margin: 0;
   -webkit-box-sizing: border-box;
@@ -461,6 +467,7 @@ button {
   }
   .container-2 {
     padding-top: 20px;
+    margin-left: 10px;
   }
   /*PLAYING VIDEO AND DESCRIPTION*/
   .tablet-flex {

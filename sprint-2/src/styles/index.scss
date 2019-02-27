@@ -1,6 +1,14 @@
 @import 'variables';
 @import 'mixins';
 
+//'Loading Brainflix' 
+h3 {
+  color:$default-color;
+  font-family: $demifont, sans-serif; 
+  padding: 30px;
+}
+
+//BODY
 body {
   margin: 0;
   box-sizing: border-box;

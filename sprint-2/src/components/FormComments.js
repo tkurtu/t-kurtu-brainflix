@@ -12,17 +12,14 @@ class FormComments extends React.Component {
               <img src={user} alt=''className="comments__thumbnail" />
             </div>
             <div className="form-width">
-              
-                <span className="comments__title">JOIN THE CONVERSATION</span> 
-                <form className="tablet-form"> 
-                <input type="text" name ="comments-form" placeholder="Add a comment" className="comments__form"/>
-                <button className="comments__button">COMMENT</button>
-              </form>
+                <span className="comments__title">JOIN THE CONVERSATION
+                </span> 
+                  <form className="tablet-form"> 
+                    <input type="text" name ="comments-form" placeholder="Add a comment" className="comments__form"/>
+                    <button className="comments__button">COMMENT</button>
+                </form>
             </div>
           </article>
-          
-      
-      
       </section>   
      
       

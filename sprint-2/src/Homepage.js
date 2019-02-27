@@ -1,5 +1,7 @@
 import React from 'react';
 import Videos from './components/Videos';
+import './styles/index.css';
+import Header from './components/Header'
 import Currentvideo from './components/Currentvideo';
 import Videotitle from './components/Videotitle';
 import FormComments from './components/FormComments';
@@ -12,18 +14,17 @@ const myKey = '?api_key=c38ea111-7d11-400d-a33b-ab86b765b9b6'
 const currentPlaying = id => `http://project-2-api.herokuapp.com/videos/${id}${myKey}`
 
 
-
 class Homepage extends React.Component {
   constructor() {
     super()
     this.state = {
       videoData: [], //list of side videos
-      videoInfo: [],//titles, likes, views, date, etc.
+      videoInfo: [],// video titles, likes, views, date, etc.
       videoComments: [], //comments 
       videoThumbnail: [], //currently playing video 
       loopingVideo: [], //video of rabbit
-      videoId: '', //id of videos
-
+      videoId: '', //id of each single video
+      loading: true //page is loading
     }
   }
  
@@ -32,12 +33,13 @@ class Homepage extends React.Component {
       .then(response => {
         this.setState({ videoData: response.data })
         this.setState({ videoId: response.data[0].id })
+        this.setState({ loading: false })
       })
       .then (()  => {
         axios
           .get(currentPlaying (this.state.videoId)) 
           .then(response => {
-            console.log(response.data) //prints out the array of id, comments, description etc
+            console.log(response.data) //array of video information
             this.setState ({
               videoComments: response.data.comments,
               videoInfo: response.data,
@@ -48,7 +50,6 @@ class Homepage extends React.Component {
           })
       })
   }
-
 
   componentDidUpdate(prevProps, prevState) {
     if(this.props.match.params.id !== prevProps.match.params.id) {
@@ -67,8 +68,10 @@ class Homepage extends React.Component {
   }
 
   render() {
+    if (this.state.loading) return <h3>Loading Brainflix...</h3>
     return (
      <div>
+       <Header /> 
       <Currentvideo videoThumbnail={this.state.videoThumbnail} loopingVideo={this.state.loopingVideo} />
       <section className="desktop-flex">
           <div className="container-1">
@@ -85,6 +88,5 @@ class Homepage extends React.Component {
     )
   }
 }
-
 
   export default Homepage;
