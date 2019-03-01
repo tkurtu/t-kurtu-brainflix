@@ -9,7 +9,7 @@ import Comments from './components/Comments';
 import axios from 'axios';
 
 
-const videoUrl = 'https://project-2-api.herokuapp.com/videos/'
+const videoUrl = 'http://localhost:8080/videoslist'
 const myKey = '?api_key=c38ea111-7d11-400d-a33b-ab86b765b9b6'
 const currentPlaying = id => `http://project-2-api.herokuapp.com/videos/${id}${myKey}`
 
@@ -29,7 +29,7 @@ class Homepage extends React.Component {
   }
  
   componentDidMount() {
-    axios.get(videoUrl + myKey)
+    axios.get(videoUrl)
       .then(response => {
         this.setState({ videoData: response.data })
         this.setState({ videoId: response.data[0].id })

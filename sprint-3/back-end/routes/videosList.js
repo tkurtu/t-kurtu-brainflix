@@ -1,4 +1,7 @@
-[
+const express = require('express')
+const router = express.Router()
+
+const videosList = [
   {
   "id": "1af0jruup5gu",
   "title": "BMX Rampage: 2018 Highlights",
@@ -53,4 +56,11 @@
   "channel": "Scotty Cranmer",
   "image": "https://i.imgur.com/i6S8m7I.jpg"
   }
-  ]
+  
+]
+
+  router.get('/', (req, res) => {
+  res.json(videosList)
+})
+
+module.exports = router

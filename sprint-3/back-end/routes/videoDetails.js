@@ -1,4 +1,7 @@
-[
+const express = require('express')
+const router = express.Router()
+
+const videoDetails = [
   {
     "id": "1af0jruup5gu",
     "title": "BMX Rampage: 2018 Highlights",
@@ -322,3 +325,9 @@
   ]
   },
 ]
+
+router.get('/', (req, res) => {
+  res.json(videoDetails)
+})
+
+module.exports = router
