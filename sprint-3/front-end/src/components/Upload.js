@@ -15,9 +15,10 @@ class Upload extends React.Component {
 		};
 	}
 
-	onSubmit = event => {
-		event.preventDefault();
-	};
+	// onSubmit = () => {
+  //   window.location.replace("http://localhost:3000/");
+  //   return false;
+	// };
 
 	postVid = () => {
 		axios
@@ -69,10 +70,6 @@ class Upload extends React.Component {
 										name="description"
 										onChange={this.onChange}
 									/>
-									{/* <button onClick={this.postVid}>PUBLISH</button>
-									<Link to="/">
-										<button>CANCEL</button>
-									</Link> */}
 								</form>
 							</div>
 						</section>
@@ -94,29 +91,3 @@ class Upload extends React.Component {
 }
 
 export default Upload;
-
-// constructor() {
-//   super()
-//   this.state = {
-//     uploadTitle = '',
-//     uploadDetail = '',
-//   }
-// }
-
-/* <div className="upload-buttons">
-            <button className="comments__button">PUBLISH</button>
-            <div className="comments__cancel">CANCEL</div>
-          </div> */
-
-// constructor(props) {
-//   super(props)
-//   this.state = {
-//     title: '',
-//     description: ''
-//   }
-//  }
-
-// const title = event.target.title.value;
-// const description = event.target.description.value;
-//   console.log(title)
-//   console.log(description)

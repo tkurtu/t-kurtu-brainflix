@@ -54,16 +54,14 @@
 		"image": "https://i.imgur.com/i6S8m7I.jpg"
 	},
 	{
-		"id": "3kd6y813i9jstefiks",
-		"title": "This is my new Video",
-		"description": "This is my video description, thank you so much for tuning in !",
+		"id": "3kd6y81544jstj6okr",
+		"title": "Playing with React and Node!",
 		"channel": "Tas Talks",
 		"image": "https://i.imgur.com/eknVBeg.jpg"
 	},
 	{
-		"id": "3kd6y813odjstf8ez3",
-		"title": "this is a new title",
-		"description": "this is a description",
+		"id": "3kd6y815a7jstkf47f",
+		"title": "Let's add another video!",
 		"channel": "Tas Talks",
 		"image": "https://i.imgur.com/eknVBeg.jpg"
 	}
