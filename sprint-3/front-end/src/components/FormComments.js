@@ -6,7 +6,7 @@ class FormComments extends React.Component {
   render () {
     return (
       <section className="comments">
-        <h2 className="comments__counter">3 Comments</h2>
+        <h2 className="comments__counter">Comments</h2>
           <article className="form-flex">
             <div>
               <img src={user} alt=''className="comments__thumbnail" />

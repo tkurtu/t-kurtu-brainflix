@@ -11,6 +11,8 @@ import axios from 'axios';
 
 const videoUrl = 'http://localhost:8080/videos'
 const currentPlaying = id => `http://localhost:8080/videos/${id}`
+const myKey = '?api_key=c38ea111-7d11-400d-a33b-ab86b765b9b6'
+
 
 
 class Homepage extends React.Component {
@@ -23,12 +25,13 @@ class Homepage extends React.Component {
       videoThumbnail: [], //currently playing video 
       loopingVideo: [], //video of rabbit
       videoId: '', //id of each single video
-      loading: true //page is loading
+      loading: true, //page is loading
     }
   }
- 
+
   componentDidMount() {
-    axios.get(videoUrl)
+    axios
+      .get(videoUrl)
       .then(response => {
         this.setState({ videoData: response.data })
         this.setState({ videoId: response.data[0].id })
@@ -43,7 +46,7 @@ class Homepage extends React.Component {
               videoComments: response.data.comments,
               videoInfo: response.data,
               videoThumbnail: response.data.image,
-              // loopingVideo: response.data.video + myKey
+              loopingVideo: response.data.video + myKey
             })
             console.log(response.data.image)
           })
@@ -60,7 +63,7 @@ class Homepage extends React.Component {
             videoComments: response.data.comments,
             videoInfo: response.data,
             videoThumbnail: response.data.image,
-            // loopingVideo: response.data.video + myKey
+            loopingVideo: response.data.video + myKey
           })
         })
     }
@@ -71,7 +74,7 @@ class Homepage extends React.Component {
     return (
      <div>
        <Header /> 
-      <Currentvideo videoThumbnail={this.state.videoThumbnail} />
+      <Currentvideo videoThumbnail={this.state.videoThumbnail} loopingVideo={this.state.loopingVideo}/>
       <section className="desktop-flex">
           <div className="container-1">
             <Videotitle videoInfo={this.state.videoInfo}/>

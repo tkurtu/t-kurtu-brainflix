@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const fs = require('fs');
 const bodyParser= require('body-parser')
-const videoList = require('./videoList') //videoList
+const videoList = require('./videoList') 
 const videos = require('./videos')
 
 router.use(bodyParser.json())
@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
     "image": "https://i.imgur.com/eknVBeg.jpg",
   }
 
-  const videoDetail =  {
+  const videoDetail = {
     "id": "1aivjrugtu6m",
     "title": "Experimenting with Express Router!",
     "channel": "Tas Talks",
@@ -35,10 +35,10 @@ router.post('/', (req, res) => {
     "views": "1,001,023",
     "likes": "110,985",
     "duration": "4:01",
+    "video": "https://project-2-api.herokuapp.com/stream",
     "timestamp": 1545162149000,
     "comments": []
   }
-
 
   videos.push(singleVideo)
   videoList.push(videoDetail)
@@ -48,33 +48,5 @@ router.post('/', (req, res) => {
   console.log('Done') 
 })
 
-// router.post('/', (req, res) => {
-
-// }
-
-
 
 module.exports = router 
-
-
-
-
-
-
-
-
-
-
-
-
-// router.get('/videoList', (req, res) => {
-//   res.json(videoList)
-// })
-
-// const string = JSON.stringify(videos.json)
-// fs.writeFileSync('videos.json', string)
-// console.log('Done')
-
- // const output = JSON.stringify(videoDetail, singleVideo)
-  //   fs.writeFileSync('./videos.json', output);
-  //   fs.writeFileSync('./videoList.json', output);
