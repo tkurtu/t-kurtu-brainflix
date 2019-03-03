@@ -1,43 +1,52 @@
 const express = require('express')
+const bodyParser= require('body-parser')
 const router = express.Router()
 const fs = require('fs');
-const bodyParser= require('body-parser')
 const videoList = require('./videoList') 
 const videos = require('./videos')
+const cors = require('cors');
+const uniqid = require('uniqid');
 
+
+router.use(cors())
 router.use(bodyParser.json())
+router.use(express.static("public"));
 
-  
+
 router.get('/', (req, res) => {
   res.json(videos)
 })
 
 router.get('/:id', (req, res) => { 
-  const videoData = videoList.find(video => video.id === req.params.id)
+  const id = req.params.id;
+  const videoData = videoList.find(video => {
+    return video.id === id;
+  })
   res.json(videoData)
 })
 
-
 router.post('/', (req, res) => {
+  console.log(req.body + "retreived data")
   const singleVideo = {
-    "id": "1aivjrugtu6m",
-    "title": "Experimenting with Express Router!",
+    "id": uniqid(),
+    "title": req.body.title,
+    "description": req.body.description,
     "channel": "Tas Talks",
     "image": "https://i.imgur.com/eknVBeg.jpg",
   }
 
   const videoDetail = {
-    "id": "1aivjrugtu6m",
-    "title": "Experimenting with Express Router!",
+    "id": uniqid(),
+    "title": req.body.title,
     "channel": "Tas Talks",
     "image": "https://i.imgur.com/eknVBeg.jpg",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "description": req.body.description,
     "views": "1,001,023",
     "likes": "110,985",
     "duration": "4:01",
     "video": "https://project-2-api.herokuapp.com/stream",
     "timestamp": 1545162149000,
-    "comments": []
+    "comments": [],
   }
 
   videos.push(singleVideo)
@@ -45,8 +54,13 @@ router.post('/', (req, res) => {
 
   fs.writeFileSync('./routes/videos.json', JSON.stringify(videos));
   fs.writeFileSync('./routes/videoList.json', JSON.stringify(videoList));
-  console.log('Done') 
+  res.send(singleVideo)
+  res.send(videoDetail)
 })
 
+// router.post('/videos', (req, res) => {
+//   console.log(req.body + "recieved!");
+//   res.send('Another Success!')
+// })
 
 module.exports = router 

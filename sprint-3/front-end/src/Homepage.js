@@ -14,7 +14,6 @@ const currentPlaying = id => `http://localhost:8080/videos/${id}`
 const myKey = '?api_key=c38ea111-7d11-400d-a33b-ab86b765b9b6'
 
 
-
 class Homepage extends React.Component {
   constructor() {
     super()
@@ -41,14 +40,12 @@ class Homepage extends React.Component {
         axios
           .get(currentPlaying (this.state.videoId)) 
           .then(response => {
-            console.log(response.data) //array of video information
             this.setState ({
               videoComments: response.data.comments,
               videoInfo: response.data,
               videoThumbnail: response.data.image,
               loopingVideo: response.data.video + myKey
             })
-            console.log(response.data.image)
           })
       })
   }
@@ -58,7 +55,6 @@ class Homepage extends React.Component {
       axios
       .get(currentPlaying(this.props.match.params.id))
         .then(response => {
-          console.log(this.props.match)
           this.setState({
             videoComments: response.data.comments,
             videoInfo: response.data,

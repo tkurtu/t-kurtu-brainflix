@@ -4,85 +4,119 @@ import Header from './Header';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const newApi = `http://localhost:8080/videos`
-
+const newApi = `http://localhost:8080/videos`;
 
 class Upload extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			title: '',
+			description: ''
+		};
+	}
 
-  uploadVideo = (event) => {
-    event.preventDefault();
-    // const title = event.target.title.value;
-    // const description = event.target.description.value;
-    // console.log(title)
-    // console.log(description)
-    axios
-    .post(newApi, {
-      title: event.target.title.value,
-      description: event.target.description.value,
-    })
-    .then(response => {
-      console.log("Uploaded!");
-    })
-  }
+	onSubmit = event => {
+		event.preventDefault();
+	};
 
+	postVid = () => {
+		axios
+			.post(newApi, {
+				title: this.state.title,
+				description: this.state.description
+			})
+			.then(response => {
+				console.log('Uploaded!');
+			});
+	};
 
-  render () {
-    return (
-      <div>
-       <Header /> 
-        <section className='upload-body' >
-          <h1 className='upload-title'>Upload Video</h1>
-          <div className='grey-border'>
-            <section className='upload-desktop'>
-              <div>
-                <h3 className="upload-subtitle">VIDEO THUMBNAIL</h3> 
-                <img src={upload} className="upload-image" alt=" " /> 
-              </div>
-              <div className="form-width">
-                <form className="upload-form" onSubmit={this.uploadVideo} > 
-                  <label className="upload-subtitle">TITLE YOUR VIDEO</label>
-                  <input 
-                  type="text" 
-                  placeholder="Add a title to your video" 
-                  id="title" 
-                  className="upload-form1" 
-                  name="title"
-                  />
+	onChange = event => {
+		this.setState({
+			[event.target.name]: event.target.value
+		});
+	};
 
-                  <label className="upload-subtitle">ADD A VIDEO DESCRIPTION</label>
-                  <input 
-                  type="text" 
-                  placeholder="Add a description to your video" 
-                  id="description"
-                  className="upload-form2" 
-                  name="description"
-                  />
-                  <button onClick={this.publishVid}>PUBLISH</button>
-                  <Link to="/"> 
-                  <button onClick={this.cancelVid}>CANCEL</button>
-                  </Link>
-                </form>
-              </div>  
-            </section>
-          </div> 
-        </section>
-      </div>
-    )
-  }
+	render() {
+		return (
+			<div>
+				<Header />
+				<section className="upload-body">
+					<h1 className="upload-title">Upload Video</h1>
+					<div className="grey-border">
+						<section className="upload-desktop">
+							<div>
+								<h3 className="upload-subtitle">VIDEO THUMBNAIL</h3>
+								<img src={upload} className="upload-image" alt=" " />
+							</div>
+							<div className="form-width">
+								<form className="upload-form" onSubmit={this.onSubmit}>
+									<label className="upload-subtitle">TITLE YOUR VIDEO</label>
+									<input
+										type="text"
+										placeholder="Add a title to your video"
+										id="title"
+										className="upload-form1"
+										name="title"
+										onChange={this.onChange}
+									/>
+
+									<label className="upload-subtitle">ADD A VIDEO DESCRIPTION</label>
+									<input
+										type="text"
+										placeholder="Add a description to your video"
+										id="description"
+										className="upload-form2"
+										name="description"
+										onChange={this.onChange}
+									/>
+									{/* <button onClick={this.postVid}>PUBLISH</button>
+									<Link to="/">
+										<button>CANCEL</button>
+									</Link> */}
+								</form>
+							</div>
+						</section>
+					</div>
+					<div className="upload-buttons">
+						<button className="comments__button" onClick={this.postVid}>
+							PUBLISH
+						</button>
+						<div>
+							<Link to="/">
+								<div className="comments__cancel">CANCEL</div>
+							</Link>
+						</div>
+					</div>
+				</section>
+			</div>
+		);
+	}
 }
 
-export default Upload
+export default Upload;
 
-
-  // constructor() {
-  //   super()
-  //   this.state = {
-  //     uploadTitle = '',
-  //     uploadDetail = '',
-  //   }
-  // }
+// constructor() {
+//   super()
+//   this.state = {
+//     uploadTitle = '',
+//     uploadDetail = '',
+//   }
+// }
 
 /* <div className="upload-buttons">
             <button className="comments__button">PUBLISH</button>
             <div className="comments__cancel">CANCEL</div>
           </div> */
+
+// constructor(props) {
+//   super(props)
+//   this.state = {
+//     title: '',
+//     description: ''
+//   }
+//  }
+
+// const title = event.target.title.value;
+// const description = event.target.description.value;
+//   console.log(title)
+//   console.log(description)
