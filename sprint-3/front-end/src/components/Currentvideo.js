@@ -1,9 +1,4 @@
 import React from 'react';
-// import playButton from '../assets/Icons/SVG/Icon-play.svg';
-// import fullScreen from '../assets/Icons/SVG/Icon-fullscreen.svg';
-// import volume from '../assets/Icons/SVG/Icon-volume.svg';
-
-
 
 class Currentvideo extends React.Component {
   

@@ -1,21 +1,11 @@
-const fs = require('fs')
 const express = require ('express')
 const cors = require('cors')
-// const bodyParser= require('body-parser')
 const app = express () 
-const videosList = require('./routes/videosList')
-const videos = require('./routes/videos')
+const routes = require('./routes/routes')
 
 app.use(cors())
-// app.use(bodyParser.json())
 
-// This attaches the router to the '/videos' path and array
-// app.use('/videosList', videosList)
-
-app.use('/videosList', videosList),
-app.use('/videos', videos)
-
-
+app.use('/videos', routes),
 
 
 app.listen(8080, () => {
@@ -24,6 +14,18 @@ app.listen(8080, () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+// This attaches the router to the '/videos' path and array
+// app.use('/videosList', videosList)
 
 // const express = require('express')
 // const router = express.Router()

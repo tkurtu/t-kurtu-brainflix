@@ -9,9 +9,8 @@ import Comments from './components/Comments';
 import axios from 'axios';
 
 
-const videoUrl = 'http://localhost:8080/videoslist'
-const myKey = '?api_key=c38ea111-7d11-400d-a33b-ab86b765b9b6'
-const currentPlaying = id => `http://project-2-api.herokuapp.com/videos/${id}${myKey}`
+const videoUrl = 'http://localhost:8080/videos'
+const currentPlaying = id => `http://localhost:8080/videos/${id}`
 
 
 class Homepage extends React.Component {
@@ -44,7 +43,7 @@ class Homepage extends React.Component {
               videoComments: response.data.comments,
               videoInfo: response.data,
               videoThumbnail: response.data.image,
-              loopingVideo: response.data.video + myKey
+              // loopingVideo: response.data.video + myKey
             })
             console.log(response.data.image)
           })
@@ -61,7 +60,7 @@ class Homepage extends React.Component {
             videoComments: response.data.comments,
             videoInfo: response.data,
             videoThumbnail: response.data.image,
-            loopingVideo: response.data.video + myKey
+            // loopingVideo: response.data.video + myKey
           })
         })
     }
@@ -72,7 +71,7 @@ class Homepage extends React.Component {
     return (
      <div>
        <Header /> 
-      <Currentvideo videoThumbnail={this.state.videoThumbnail} loopingVideo={this.state.loopingVideo} />
+      <Currentvideo videoThumbnail={this.state.videoThumbnail} />
       <section className="desktop-flex">
           <div className="container-1">
             <Videotitle videoInfo={this.state.videoInfo}/>
