@@ -15,11 +15,6 @@ class Upload extends React.Component {
 		};
 	}
 
-	// onSubmit = () => {
-  //   window.location.replace("http://localhost:3000/");
-  //   return false;
-	// };
-
 	postVid = () => {
 		axios
 			.post(newApi, {
